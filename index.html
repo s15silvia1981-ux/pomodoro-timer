@@ -387,6 +387,13 @@ document.querySelectorAll('.mode-btn').forEach(btn => {
   });
 });
 
+// Space key to start/pause, R key to reset
+document.addEventListener('keydown', (e) => {
+  if (e.target.tagName === 'BUTTON') return;
+  if (e.code === 'Space') { e.preventDefault(); startBtn.click(); }
+  if (e.code === 'KeyR')  { e.preventDefault(); resetBtn.click(); }
+});
+
 // Init
 updateDisplay();
 renderDots();
